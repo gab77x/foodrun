@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://exbbypgqkc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(250, 116)
+
+[node name="Obstaculo_largo" type="StaticBody2D" unique_id=652307146]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142912040]
+scale = Vector2(2.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1102644701]
+shape = SubResource("RectangleShape2D_yf5fn")

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://j2hwlt6aixxk"]
+
+[ext_resource type="Script" uid="uid://c5sb4nx5riwps" path="res://Player.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://cuic6tjq7a8fy" path="res://Andando.png" id="2_7jktm"]
+[ext_resource type="Script" uid="uid://c781hceuqtykg" path="res://cria_obstaculo.gd" id="3_ryrav"]
+[ext_resource type="PackedScene" uid="uid://exbbypgqkc1" path="res://obstaculo_largo.tscn" id="4_eow3j"]
+[ext_resource type="PackedScene" uid="uid://b5akx2t8jxu8y" path="res://obstaculo_alto.tscn" id="5_j5wjh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ymex"]
+radius = 44.0
+height = 152.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef74"]
+atlas = ExtResource("2_7jktm")
+region = Rect2(0, 0, 86, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
+atlas = ExtResource("2_7jktm")
+region = Rect2(86, 0, 86, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hve3p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(2163, 50)
+
+[node name="Game" type="Node2D" unique_id=1928524441]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=625992787 groups=["player"]]
+position = Vector2(50, 471)
+script = ExtResource("1_80nbo")
+
+[node name="colisao_personagem" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1748745236]
+shape = SubResource("CapsuleShape2D_0ymex")
+debug_color = Color(0.59882873, 0.37684944, 0.9879982, 0.41960785)
+
+[node name="personagem" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=328610896]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=239194004]
+
+[node name="cria_obstaculo" type="Node2D" parent="." unique_id=821730376 node_paths=PackedStringArray("player")]
+script = ExtResource("3_ryrav")
+obstacle_scenes = Array[PackedScene]([ExtResource("4_eow3j"), ExtResource("5_j5wjh")])
+player = NodePath("../CharacterBody2D")
+spawn_distance_min = 520.0
+spawn_distance_max = 830.0
+
+[node name="chao" type="StaticBody2D" parent="." unique_id=1483882836]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao" unique_id=609693132]
+position = Vector2(81.5, 570)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="ColorRect" type="ColorRect" parent="chao" unique_id=765142356]
+offset_left = -1000.0
+offset_top = 545.0
+offset_right = 1159.0
+offset_bottom = 595.0
+color = Color(0, 1, 0, 1)
