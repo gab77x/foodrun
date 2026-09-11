@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5akx2t8jxu8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(90, 120)
+size = Vector2(90, 85)
 
 [node name="Obstaculo" type="StaticBody2D" unique_id=1406607736]
 
