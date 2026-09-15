@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fv3sgkdxcp61"]
+
+[ext_resource type="Texture2D" uid="uid://2y8bvypboxxr" path="res://poró.png" id="1_e6vuk"]
+[ext_resource type="Script" uid="uid://dsmqeqt0g1itm" path="res://item_3.gd" id="1_ty57x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(41, 77)
+
+[node name="item" type="Area2D" unique_id=206496332]
+script = ExtResource("1_ty57x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015735221]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_e6vuk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219287963]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1724595701]
+rect = Rect2(-20, -40, 41, 77)

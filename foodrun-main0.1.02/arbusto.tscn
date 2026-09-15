@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://coy5o3uuoxdi"]
+
+[ext_resource type="Texture2D" uid="uid://ckhvct2dalgpi" path="res://arbusto.png" id="1_bbo51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvswv"]
+
+[node name="espinho" type="Area2D" unique_id=1030618630]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490754644]
+texture = ExtResource("1_bbo51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1317225481]
+shape = SubResource("RectangleShape2D_rvswv")
