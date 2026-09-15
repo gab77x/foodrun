@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b3i3f1e5fi1td"]
+
+[ext_resource type="Script" uid="uid://disu34wd84f0j" path="res://espinho.gd" id="1_cmi34"]
+[ext_resource type="Texture2D" uid="uid://ckhvct2dalgpi" path="res://arbusto.png" id="2_7qu5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(195, 116)
+
+[node name="espinho" type="Area2D" unique_id=804913967]
+collision_layer = 4
+script = ExtResource("1_cmi34")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242264110]
+position = Vector2(0, -58)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7qu5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843265694]
+position = Vector2(-1.5, -58)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
