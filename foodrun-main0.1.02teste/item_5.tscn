@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgnm76oh4hmho"]
+
+[ext_resource type="Script" uid="uid://daod4plfldn2l" path="res://item_5.gd" id="1_r6138"]
+[ext_resource type="Texture2D" uid="uid://hm64i0s1xrdt" path="res://repolho.png" id="1_u2nuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(53, 65)
+
+[node name="item" type="Area2D" unique_id=206496332]
+script = ExtResource("1_r6138")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015735221]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_u2nuh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219287963]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1724595701]
+rect = Rect2(-28, -30, 56, 71)

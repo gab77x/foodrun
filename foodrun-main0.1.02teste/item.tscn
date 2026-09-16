@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8a8bsfrg8epk"]
+
+[ext_resource type="Script" uid="uid://d0mdyksvxi85j" path="res://item.gd" id="1_tnite"]
+[ext_resource type="Texture2D" uid="uid://d50lha1100ji" path="res://cenoura.png" id="2_ttk8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(30, 72)
+
+[node name="item" type="Area2D" unique_id=206496332]
+script = ExtResource("1_tnite")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015735221]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ttk8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219287963]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=433875449]
+position = Vector2(-67.5, 13)
+rect = Rect2(48, -58, 33, 87)
