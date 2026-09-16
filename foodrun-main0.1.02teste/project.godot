@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="FoodRun"
+run/main_scene="uid://j2hwlt6aixxk"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="uid://1vx1flxodhx6"
+
+[autoload]
+
+Global="*uid://dwn6w541cv1dq"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.16862746, 0.15686275, 0.11764706, 1)
